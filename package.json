@@ -1,0 +1,14 @@
+{
+  "name": "projet-cv",
+  "version": "1.0.0",
+  "description": "Portfoloio",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o profolio/css/ --recursive"
+  },
+  "author": "Med Foued Slama",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

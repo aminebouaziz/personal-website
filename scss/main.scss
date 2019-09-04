@@ -1,0 +1,371 @@
+@import "config";
+@import "menu";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include background;
+  background-color: $primary-color;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.4;
+  color: white;
+  height: 100%;
+  margin: 0;
+}
+
+//headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 300;
+
+  &.lg-heading {
+    font-size: 3rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem, 1rem;
+    //background: rgba(lighten($primary-color,5),0.5);
+    //background-size: 5%;
+  }
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  position: fixed; //to always make it visible when scrolling
+  z-index: 2; // be on top of everyting a9al min 2
+  width: 100%; // stretches across the hole screen
+}
+
+.text-sec {
+  color: $secondary-color;
+}
+
+main {
+  padding: 4rem;
+  min-height: calc(100vh - 55px);
+
+  .icons {
+    margin-top: 2rem;
+
+    a {
+      padding: 0.5rem;
+
+      :hover {
+        color: $secondary-color;
+        @include easeOut();
+      }
+    }
+  }
+
+  .contact-item {
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  .contact > h2 {
+    display: inline-block;
+    margin-left: 8px;
+  }
+
+  &#home {
+    overflow: hidden; // we never want to have a scroll bar in this part
+
+    h1 {
+      margin-top: 20vh; //vh means viewport height : 20 of a total of 100 horizental pieces of the page , there is also vw
+    }
+  }
+}
+
+.about-info {
+  display: grid;
+  grid-gap: 30px 40px;
+  grid-template-areas:
+    "bioimage bio bio"
+    "skill3 skill1 skill2 "
+    "skill4 skill5 skill6";
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.bio-image {
+  grid-area: bioimage;
+  background: url("../profolio/img/aminePhoto.jpg");
+  width: 261px;
+  height: 261px;
+  border-radius: 50%;
+  border: solid 3px $secondary-color;
+  background-position: center;
+  transform: rotate(90deg);
+}
+
+.bio {
+  grid-area: bio;
+  font-size: 1.3rem;
+  margin-bottom: 100px;
+
+  h3 {
+    color: $secondary-color;
+  }
+}
+
+.skill1 {
+  grid-area: skill1;
+}
+
+.skill2 {
+  grid-area: skill2;
+}
+
+.skill3 {
+  grid-area: skill3;
+}
+
+.skill4 {
+  grid-area: skill4;
+}
+
+.skill5 {
+  grid-area: skill5;
+}
+
+.skill6 {
+  grid-area: skill6;
+}
+
+ul {
+  list-style: none;
+  margin-top: -10px;
+}
+
+.skills {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.8rem;
+  opacity: 0.8;
+  padding: 5px 20px;
+  border-bottom: $secondary-color 3px solid;
+  font-size: 1.1rem;
+
+  h3 {
+    color: $secondary-color;
+    font-weight: 500;
+  }
+
+  li {
+    margin-left: -25px;
+  }
+
+  //for creating the yellow dot !
+  ul li::before {
+    content: "\2022";
+    color: $secondary-color;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    line-height: 1.6;
+  }
+}
+
+.projects {
+  img {
+    width: 40%;
+  }
+
+  .project {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
+    padding: 20px 20px;
+    border-bottom: $secondary-color 5px solid;
+    border-top: $secondary-color 5px solid;
+    border-radius: 5%;
+    width: 90%;
+
+    .project-description {
+      padding: 0px 1rem;
+
+      h3 {
+        color: $secondary-color;
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.timeline {
+  margin-top: 3rem;
+
+  ul {
+    border-left: 4px solid #ffe838;
+    border-radius: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    position: relative;
+    padding: 3rem;
+    list-style: none;
+    text-align: left;
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: $secondary-color;
+  }
+
+  .date,
+  input,
+  textarea {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  input,
+  textarea {
+    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid $primary-color;
+    border-radius: 0%;
+    font-size: 1rem;
+    color: white;
+    padding: 0.6rem;
+  }
+
+  input {
+    width: 60%;
+    height: 40px;
+  }
+
+  textarea {
+    width: 80%;
+    height: 120px;
+  }
+
+  .date::before,
+  .date::after {
+    position: absolute;
+    display: block;
+    top: 45%;
+    transform: translateY(-50%);
+  }
+
+  .date::before {
+    content: attr(data-date);
+    left: -13rem;
+    text-align: right;
+    min-width: 9rem;
+    white-space: normal;
+  }
+
+  .date::after {
+    content: "";
+    box-shadow: 0 0 0 3px $secondary-color;
+    border-radius: 100%;
+    left: -3.5rem;
+    height: 0.7rem;
+    width: 0.7rem;
+    background-color: $primary-color;
+  }
+}
+
+.contact-form {
+  margin-top: 1rem;
+
+  ul {
+    border-left: 4px solid #ffe838;
+    border-radius: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    position: relative;
+    padding: 3rem;
+    list-style: none;
+    text-align: left;
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: $secondary-color;
+  }
+
+  .date,
+  input,
+  textarea {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  input,
+  textarea {
+    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid $primary-color;
+    border-radius: 0%;
+    font-size: 1rem;
+    color: white;
+    padding: 0.6rem;
+  }
+
+  input {
+    width: 60%;
+    height: 40px;
+  }
+
+  textarea {
+    width: 80%;
+    height: 120px;
+  }
+
+  .date::after {
+    position: absolute;
+    display: block;
+    top: 45%;
+    transform: translateY(-50%);
+  }
+
+  .date::after {
+    content: "";
+    box-shadow: 0 0 0 3px $secondary-color;
+    border-radius: 100%;
+    left: -3.5rem;
+    height: 0.7rem;
+    width: 0.7rem;
+    background-color: $primary-color;
+  }
+
+  button {
+    height: 50px;
+    width: 140px;
+    border-radius: 12px;
+    border: 1px solid $secondary-color;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    opacity: 0.8;
+  }
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($color: $primary-color, $amount: 8);
+  height: 55px;
+}
+
+@import "mobile";

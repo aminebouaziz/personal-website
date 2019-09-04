@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <title>About me</title>
+</head>
+
+<body id="bg-img">
+  <header>
+    <!--les trois tirées pour accéder au menu-->
+    <div class="menu-btn">
+      <div class="btn-line"></div>
+      <div class="btn-line"></div>
+      <div class="btn-line"></div>
+    </div>
+    <!--le menu qui contient la photo et le menu-->
+    <nav class="menu">
+      <!--contient la photo seulement-->
+      <div class="menu-branding">
+        <!--l'emplacement de l'image-->
+        <div class="portrait"></div>
+      </div>
+      <!--contient les diff parties du menu-->
+      <ul class="menu-nav">
+        <li class="nav-item ">
+          <a href="../index.html" class="nav-link">
+            Home
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a href="about.html" class="nav-link">
+            About me
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="work.html" class="nav-link">
+            My Work
+          </a>
+        </li>
+        <li class="nav-item current">
+          <a href="contact.html" class="nav-link">
+            Contact me
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main id="about">
+    <h1 class="lg-heading">Contact <span class="text-sec">me</span></h1>
+    <h2 class="sm-heading">
+      Send me an email directly from here...
+    </h2>
+    <div>
+      <div>
+        <h1></h1>
+        <h2></h2>
+      </div>
+      <div class="contact-form">
+        <form action="https://formspree.io/bouaziz.amine.18@gmail.com" method="POST">
+          <ul>
+            <li class="date">
+              <h1>E-mail</h1>
+              <input type="email" name="email" id="" required />
+            </li>
+            <li class="date">
+              <h1>Objet</h1>
+              <input type="text" name="objet" id="" required />
+            </li>
+            <li class="date">
+              <h1>Message</h1>
+              <textarea type="text" name="message" id="" required></textarea>
+            </li>
+            <button type="submit" class="submit" value="Send">Envoyer</button>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <body></body>
+
+  <footer id="main-footer">
+    Copyright &copy; 2019
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

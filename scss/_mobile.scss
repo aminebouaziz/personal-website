@@ -1,0 +1,165 @@
+// wide screens 
+@include mediaXl {}
+
+// desktops and laptop screens 
+@include mediaLg {
+
+    .timeline,
+    .contact-form {
+        input {
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+        }
+    }
+}
+
+// tablet and small screens 
+@include mediaMd {
+    main {
+        align-items: center;
+        text-align: center;
+        padding: 0.5rem;
+
+        .lg-heading {
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .contact {
+            float: left;
+        }
+    }
+
+
+
+    ul.menu-nav,
+    div.menu-branding {
+        float: none;
+        width: 100%;
+        min-height: 0;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+
+        }
+    }
+
+    .menu-nav {
+        height: 70vh;
+        transform: translate3d(-100%, 0, 0);
+        font-size: 24px;
+    }
+
+    .menu-branding {
+        height: 30vh;
+        transform: translate3d(100%, 0, 0);
+
+        .portrait {
+            background-image: url('../img/foued2-mobile.jpg');
+            width: 170px;
+            height: 170px;
+
+        }
+    }
+
+    .about-info {
+        grid-template-areas:
+            'bioimage bioimage'
+            'bio bio'
+            'skill3 skill1'
+            'skill2 skill4'
+            'skill5 skill6';
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project {
+        flex-direction: column;
+
+        img {
+            width: 80%;
+        }
+    }
+
+    .contact-form {
+        width: 100%;
+
+        input {
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+        }
+    }
+
+    .timeline {
+        width: 100%;
+        padding-left: 100px;
+
+        input {
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+        }
+    }
+}
+
+// smartphone screens 
+@include mediaSm {
+    main#home h1 {
+        margin-top: 10vh;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    main#home .contact {
+        font-size: 0.9rem;
+    }
+
+    .about-info {
+        grid-template-areas:
+            'bioimage''bio'
+            'skill3''skill1'
+            'skill2''skill4'
+            'skill5''skill6';
+        grid-template-columns: 1fr
+    }
+
+    .skills li {
+        margin-left: -35px;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-form,
+    .timeline {
+        input {
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+        }
+    }
+
+    .timeline {
+        width: 100%;
+        padding-left: 110px;
+
+        ul {
+            width: 90%;
+        }
+    }
+
+    .menu-btn {
+        right: 15px;
+        top: 15px;
+    }
+}
